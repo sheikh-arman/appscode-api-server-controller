@@ -12,6 +12,7 @@ var (
 		Version: "v1alpha1",
 	}
 	SchemeBuilder = runtime.SchemeBuilder{}
+	AddToScheme   = SchemeBuilder.AddToScheme
 )
 
 func init() {

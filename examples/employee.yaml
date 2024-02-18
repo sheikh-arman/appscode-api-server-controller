@@ -1,0 +1,7 @@
+apiVersion: appscode.com/v1alpha1
+kind: Employee
+metadata:
+  name: arman
+  namespace: appscode
+spec:
+  image: skaliarman/appscode-api-server:latest

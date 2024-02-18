@@ -13,7 +13,7 @@ type Employee struct {
 }
 
 type EmployeeSpec struct {
-	Image string `json:"image"`
+	Image string `json:"image,omitempty"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

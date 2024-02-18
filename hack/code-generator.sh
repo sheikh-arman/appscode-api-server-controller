@@ -31,7 +31,7 @@ cd $depelopmentDir && go mod tidy
 
 
 # Generate crd manifest file
-#cd $depelopmentDir && controller-gen crd:trivialVersions=true crd:crdVersions=v1 paths=./... output:crd:dir=$depelopmentDir/manifests output:stdout
+cd $depelopmentDir && controller-gen crd:trivialVersions=true crd:crdVersions=v1 paths=./... output:crd:dir=$depelopmentDir/manifests output:stdout
 #controller-gen paths=./... crd:trivialVersions=true crd:crdVersions=v1 rbac:roleName=controller-perms output:crd:artifacts:config=config/crd/bases
 
 
