@@ -83,6 +83,7 @@ func (c *Controller) processNextItem() bool {
 	}
 	employee, err := c.lister.Employees(ns).Get(name)
 	if err != nil {
+		c.deleteDeployment(ns, name)
 		log.Printf("err %s calling lister func", err.Error())
 		return false
 	}
@@ -148,6 +149,19 @@ func (c *Controller) createDeployment(ns string, employee *v1alpha1.Employee) {
 		return
 	}
 	log.Printf("Created deployment %s\n", result.GetObjectMeta().GetName())
+}
+
+func (c *Controller) deleteDeployment(ns, employee string) {
+	deployClient := c.clientset.AppsV1().Deployments(ns)
+	err := deployClient.Delete(context.Background(), employee, metav1.DeleteOptions{})
+	if err != nil {
+		log.Println(err)
+	}
+	//dep, err := deployClient.Get(context.Background(), employee.Name, metav1.GetOptions{})
+	//if err != nil {
+	//	log.Println(err)
+	//}
+	fmt.Println("depName", employee)
 }
 
 func (c *Controller) checkClientSet() {
