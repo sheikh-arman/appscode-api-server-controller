@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: appscode
+  name: appscode
+  namespace: appscode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appscode
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: appscode
+    spec:
+      containers:
+      - image: skaliarman/appscode-api-server:latest
+        name: appscode-api-server
+        resources: {}
+status: {}
