@@ -20,5 +20,5 @@ type EmployeeSpec struct {
 type EmployeeList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Item            []Employee `json:"items,omitempty"`
+	Items           []Employee `json:"items,omitempty"`
 }

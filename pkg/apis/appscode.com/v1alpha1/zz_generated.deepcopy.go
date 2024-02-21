@@ -57,8 +57,8 @@ func (in *EmployeeList) DeepCopyInto(out *EmployeeList) {
 	*out = *in
 	out.TypeMeta = in.TypeMeta
 	in.ListMeta.DeepCopyInto(&out.ListMeta)
-	if in.Item != nil {
-		in, out := &in.Item, &out.Item
+	if in.Items != nil {
+		in, out := &in.Items, &out.Items
 		*out = make([]Employee, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
