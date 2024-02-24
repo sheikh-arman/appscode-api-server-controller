@@ -1,6 +1,6 @@
 # controller-appscode-api
 
-vendor file will not working. so use go mod tidy only.
+vendor file will not work. so use go mod tidy only.
 
 sh hack/code-generator.sh
 
